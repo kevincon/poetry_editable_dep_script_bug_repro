@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "parent"
+version = "0.1.0"
+description = ""
+license = "MIT"
+authors = []
+packages = [
+    { include = "parent" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+child = { path = "child", develop = true }
+
+[tool.poetry.scripts]
+parent-cli = 'parent:cli'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
